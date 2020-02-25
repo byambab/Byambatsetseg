@@ -1,0 +1,9 @@
+.imgRound { border-radius: 50%;}
+.imgMood {width: 200px;}
+.column30 {
+    float: left;
+    width: 20%;    
+    height:100% ;
+  }
+  .leftDiv{float: left;}
+  .footer{position: fixed;left: 0;bottom: 0;width: 100%;background-color:rgba(132, 169, 238,0.5); text-align: right;}
