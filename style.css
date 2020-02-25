@@ -1,39 +1,11 @@
 .imgRound { border-radius: 50%; }
-.leftDiv{float: left;}
-.footer{position: fixed;left: 0;bottom: 0;width: 100%;background-color:rgba(132, 169, 238,0.5); text-align: right;}
+
+.footer{position: relative;left: 0;bottom: 0;width: 85%;background-color:rgba(132, 169, 238,0.5); text-align: right;}
 .column30 {
   float: left;
   width: 20%;    
-  height:100% ;
- 
+  height:100% ; 
 } 
 .column30 p,li,span{color:black}
-
-.hdr img {
-  border: 1px solid #ddd; /* Gray border */
-  border-radius: 4px;  /* Rounded border */
-  padding: 5px; /* Some padding */
-  width: 150px; /* Set a small width */
-}
-
-/* Add a hover effect (blue shadow) */
-.hdr img:hover {
-  box-shadow: 0 0 2px 1px rgba(255, 127, 0, 0.5);
-}
-
-
-.hdr{background-color: rgb(38, 53, 74);width: 85%; margin: auto; padding:10px;}
-.hdr p,li,span{color: seashell;}
-.hdr h3,h4{color:rgb(255, 127, 0); font-family: 'Courier New', Courier, monospace; text-transform: uppercase;}
-.hdr a:hover {
-  color:rgba(255, 127, 0);
-}
-.hdr a {
-  color:rgba(255, 127, 0, 0.5);
-} 
-
-.imgMood {width: 200px; border-radius: 80%;}
-
-  
-  .pie{ background-image:url("images/background.gif"); background-repeat: repeat; width: 85%; margin: auto; padding:10px;}
+.pie{ background-image:url("images/background.gif"); background-repeat: repeat; width: 85%; margin: auto; padding:10px;}
   
