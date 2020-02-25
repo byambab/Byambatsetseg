@@ -1,0 +1,40 @@
+.leftDiv{float: left;}
+.imgRound { border-radius: 50%; }
+.icn {
+  border: 1px solid #ddd; /* Gray border */
+  border-radius: 4px;  /* Rounded border */
+  padding: 5px; /* Some padding */
+  width: 150px; /* Set a small width */
+}
+
+/* Add a hover effect (blue shadow) */
+.icn img:hover {
+  box-shadow: 0 0 2px 1px rgba(255, 127, 0, 0.5);
+}
+
+
+.hdr{background-color: rgb(38, 53, 74);width: 85%; margin: auto; padding:10px;}
+.hdr p,li,span{color: seashell;}
+.hdr h3,h4{color:rgb(255, 127, 0); font-family: Arial, "Arial Black", Verdana, "Trebuchet MS",Georgia, Tahoma, "Courier New", "Times New Roman"; text-transform: uppercase;}
+.hdr a:hover {
+  color:rgba(255, 127, 0);
+}
+.hdr a {
+  color:rgba(255, 127, 0, 0.5);
+} 
+
+.footer{ text-align: right;}
+.btn {
+  background-color:rgb(255, 127, 0);
+  border: none; 
+  color: white; 
+  padding: 7px 16px; 
+  font-size: 16px; 
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+  
