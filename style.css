@@ -1,5 +1,15 @@
 .imgRound { border-radius: 50%; }
-img {
+.leftDiv{float: left;}
+.footer{position: fixed;left: 0;bottom: 0;width: 100%;background-color:rgba(132, 169, 238,0.5); text-align: right;}
+.column30 {
+  float: left;
+  width: 20%;    
+  height:100% ;
+ 
+} 
+.column30 p,li,span{color:black}
+
+.hdr img {
   border: 1px solid #ddd; /* Gray border */
   border-radius: 4px;  /* Rounded border */
   padding: 5px; /* Some padding */
@@ -7,25 +17,23 @@ img {
 }
 
 /* Add a hover effect (blue shadow) */
-img:hover {
+.hdr img:hover {
   box-shadow: 0 0 2px 1px rgba(255, 127, 0, 0.5);
 }
-a:hover {
-  color:rgba(255, 127, 0);
-}
-a {
-  color:rgba(255, 127, 0, 0.5);
-}
+
 
 .hdr{background-color: rgb(38, 53, 74);width: 85%; margin: auto; padding:10px;}
+.hdr p,li,span{color: seashell;}
+.hdr h3,h4{color:rgb(255, 127, 0); font-family: 'Courier New', Courier, monospace; text-transform: uppercase;}
+.hdr a:hover {
+  color:rgba(255, 127, 0);
+}
+.hdr a {
+  color:rgba(255, 127, 0, 0.5);
+} 
+
 .imgMood {width: 200px; border-radius: 80%;}
-.column30 {
-    float: left;
-    width: 20%;    
-    height:100% ;
-  }
-  .leftDiv{float: left;}
-  .footer{position: fixed;left: 0;bottom: 0;width: 100%;background-color:rgba(132, 169, 238,0.5); text-align: right;}
-  .am{ background-image:url("bg.jpg"); background-repeat: repeat; width: 85%; margin: auto; padding:10px;}
-  h3,h4{color:rgb(255, 127, 0); font-family: 'Courier New', Courier, monospace; text-transform: uppercase;}
-  p,li,span{color: seashell;}
+
+  
+  .pie{ background-image:url("images/background.gif"); background-repeat: repeat; width: 85%; margin: auto; padding:10px;}
+  
