@@ -1,13 +1,27 @@
-form { 
+fieldset { 
   margin: 0px;
   padding: 20px;
   width: 50%;
- background-color:rgb(246, 249, 252) ; 
+ background-color:rgb(224, 224, 255) ; 
+ border-radius: 10px;
+ border-style: outset;
 }
-input [type="text"]
+#logo {width: 150px;}
+button { background-color:  rgb(255, 170, 170); padding: 5px ; font-weight: bold; } 
+a { color:  rgb(255, 170, 170);  } 
+#signup span { font-weight: bold; width: 150px; display: inline-block;}
+#signup label { font-weight: normal;}
+#signup select { border-style: inset;}
+#signup input { border-style: inset;}
+
+legend {
+  background-color: white;
+  border:2px outset rgb(236, 236, 236) ;
+}
+#signup  input [type="text"]
 { 
   font-size: 12px;
-  background-color: lightyellow;
+  border-style: inset;
 }
 .footer{position: fixed;left: 0;bottom: 0;width: 100%;background-color:rgba(132, 169, 238,0.5); text-align: right;}
 
