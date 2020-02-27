@@ -8,13 +8,13 @@ body {margin:0px;  padding: 0px;   background-image: url("Movie/images/backgroun
 .goverview ul {list-style-type:none ;}
 
 .rotten { width:550px; height: 83px; background-image: url("Movie/images/rbg.png"); background-repeat: repeat; font-size: 48pt; color:red; font-weight: bold ;}
-.rotten img{ float: left; position: absolute; border-radius: 20px; }
+.rotten img{ border-radius: 20px; }
+.rotten span{ position: relative; float: left; }
 .paging {background-color: #a2b964; margin: 0px; padding:10px;}
 h1 {font-size: 24px; text-align: center; font-weight: bold; text-shadow: 3px 3px #999999;}
 .footer{ float: right; }
 .review  { margin: 2%; border: 2px solid gray; margin-right: 270px; border-radius: 10px; font-size: 8pt; font-weight: bold; padding: 5px; };
 .review img{ float: left; }
-.reviewer {margin: 10px; margin-bottom: 0px;overflow: hidden;}
-.reviewer span {display: block;}
-.reviewer img { float: left;}
+.reviewer {margin: 10px; margin-bottom: 0px; }
+/*.reviewer img { float: left;}*/
 .publication{font-style: italic;}
