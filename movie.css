@@ -13,7 +13,7 @@ body {margin:0px;  padding: 0px;   background-image: url("Movie/images/backgroun
 .publication{font-style: italic; display: block;  }
 
 .oview {float: right;width: 250px;}
-.goverview {background-color: #a2b964;   padding:10px 20px 20px 20px; margin-top: 5px; margin-bottom: 0px;}
+.goverview {background-color: #a2b964;   padding:10px 20px 20px 20px; margin-bottom: 0px;}
 .goverview dt {font-weight: bold; padding-top: 20px; }
 .goverview ul {list-style-type:none ;}
 
