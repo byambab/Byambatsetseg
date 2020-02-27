@@ -1,11 +1,9 @@
 .imgRound { border-radius: 50%; }
 
-.footer{position: relative;left: 0;bottom: 0;width: 85%;background-color:rgba(132, 169, 238,0.5); text-align: right;}
+.footer{position: fixed;left: 0;bottom: 0;width: 100%;background-color:rgba(132, 169, 238,0.5); text-align: right;}
 .column30 {
   float: left;
   width: 20%;    
   height:100% ; 
 } 
 .column30 p,li,span{color:black}
-.pie{ background-image:url("images/background.gif"); background-repeat: repeat; width: 85%; margin: auto; padding:10px;}
-  
