@@ -1,22 +1,28 @@
 body {margin:0px;  padding: 0px;   background-image: url("Movie/images/background.png"); background-repeat: repeat; font-size: 8pt; font-family: Verdana, Tahoma, sans-serif; }
 .banner{margin: 0px; text-align: center; background-image: url("Movie/images/bannerbg.png"); background-repeat: repeat;}
 .banner img{margin-left: auto; margin-right: auto; display:block; }
+
 #overview  {width:800px; border: 4px solid gray; overflow: auto; border-radius: 20px;margin:0px auto 50px auto; }
 #overImg {float: right;} 
-.goverview {background-color: #a2b964; float: right;  padding:0px 20px 20px 20px; margin-top: 0px; margin-left: 550px;}
-.goverview dt {font-weight: bold; padding-top: 20px; }
-.goverview ul {list-style-type:none ;}
-
-.rotten { width:550px; height: 83px; background-image: url("Movie/images/rbg.png"); background-repeat: repeat; font-size: 48pt; color:red; font-weight: bold ;}
-.rotten img{ border-radius: 20px; }
-.rotten span{ vertical-align: top; }
-.paging {background-color: #a2b964; margin: 0px; padding:10px;}
-h1 {font-size: 24px; text-align: center; font-weight: bold; text-shadow: 3px 3px #999999;}
-
-.dreview { columns: 2; width: 65%; margin-right:270px; }
+.section-left {float: left; width: 550px; } 
+.dreview { columns: 2; width: 95%; margin-left: auto; margin-right: auto;}
 .review  { margin: 2%;  border: 2px solid gray;  border-radius: 10px; font-size: 8pt; font-weight: bold; padding: 5px; };
 .review img{ float: left; }
 .reviewer { margin: 10px; margin-bottom: 0px; }
-/*.reviewer img { float: left;}*/
 .publication{font-style: italic;}
+
+.oview {float: right;width: 250px;}
+.goverview {background-color: #a2b964;   padding:0px 20px 20px 20px; margin-top: 0px; }
+.goverview dt {font-weight: bold; padding-top: 20px; }
+.goverview ul {list-style-type:none ;}
+
+.rotten { width:550px;   height: 83px; background-image: url("Movie/images/rbg.png"); background-repeat: repeat; font-size: 48pt; color:red; font-weight: bold ;}
+.rotten img{ border-radius: 20px; }
+.rotten span{ vertical-align: top; }
+
+.paging {background-color: #a2b964; margin: 0px; padding:5px; clear: both; }
+
+h1 {font-size: 24px; text-align: center; font-weight: bold; text-shadow: 3px 3px #999999;}
+
+
 .footer{ float: right; }
