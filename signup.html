@@ -7,31 +7,46 @@
 </head>
 
 <body>
-  <img src="logo.jpg" />
+  <img src="logo.jpg" id="logo" />
   <form action="http://mumstudents.org/params.php">
-    <fieldset>
+    <fieldset id="signup">
       <legend> New User Signup:</legend>
-      <p>Name: <input type="text" name="sName" maxlength="16" size="16" /> </p>
-      <p>Gender: <label> <input type="radio" name="gender" value="Male" /> Male</label>
+      <p> <span>Name:</span> <input type="text" name="sName" maxlength="16" size="16" /> </p>
+      <p> <span>Gender:</span> <label> <input type="radio" name="gender" value="Male" /> Male</label>
         <label> <input type="radio" name="gender" value="Female" /> Female</label> </p>
-      <p>Age: <input type="number" name="age" size="6" minlength="2" maxlength="6" /> </p>
-      <p>Personality type: <input type="text" name="ptype" minlength="4" maxlength="6" size="6" /> (<a target="_blank"
-          href="http://www.humanmetrics.com/cgi-win/jtypes2.asp"> Don't you Know your type</a>)
+      <p> <span>Age:</span> <input type="number" name="age" size="6" minlength="2" maxlength="6" /> </p>
+      <p> <span>Personality type:</span> <input type="text" name="ptype" minlength="4" maxlength="6" size="6" /> (<a
+          target="_blank" href="http://www.humanmetrics.com/cgi-win/jtypes2.asp"> Don't you Know your type</a>)
       </p>
 
-      <p>Favorite OS :
+      <p> <span>Favorite OS :</span>
         <select name="favoriteos">
           <option value="Windows" selected>Windows</option>
           <option value="Mac">Mac OS X</option>
           <option value="Linux">Linux</option>
         </select>
       </p>
-      <p>Seeking age: <input type="number" name="minage" maxlength="2" size="6" /> to <input type="number" name="maxage"
-          maxlength="2" size="6" /></p>
-      <button type="submit"> Get Grade!</button>
+      <p> <span>Seeking age: </span> <input type="number" name="minage" maxlength="2" size="6" /> to <input
+          type="number" name="maxage" maxlength="2" size="6" /></p>
+
+      <button type="submit"> Sign Up</button>
     </fieldset>
 
   </form>
+  <br />
+  <div>
+    This page is for single nerds to meet and date!<br />
+    Thank you for using this site.
+  </div>
+  <br />
+  <a href="index.html"> GO BACK TO FRONTPAGE </a>
+  <br />
+  <br />
+  <div>
+    <a href="http://validator.w3.org/check/referer"><img src="Movie\images\w3c-html.png" alt="Valid HTML5" /></a> 
+    <a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="Movie\images\w3c-css.png"
+        alt="Valid CSS" /></a>
+  </div>
 </body>
 
 </html>
