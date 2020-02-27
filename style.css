@@ -3,7 +3,7 @@
 .footer{position: fixed;left: 0;bottom: 0;width: 100%;background-color:rgba(132, 169, 238,0.5); text-align: right;}
 .column30 {
   float: left;
-  width: 20%;    
+  width: 30%;    
   height:100% ; 
 } 
 .column30 p,li,span{color:black}
