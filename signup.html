@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Retrieve Grade</title>
+  <link href="signup.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+  <img src="logo.jpg" />
+  <form action="http://mumstudents.org/params.php">
+    <fieldset>
+      <legend> New User Signup:</legend>
+      <p>Name: <input type="text" name="sName" maxlength="16" size="16" /> </p>
+      <p>Gender: <label> <input type="radio" name="gender" value="Male" /> Male</label>
+        <label> <input type="radio" name="gender" value="Female" /> Female</label> </p>
+      <p>Age: <input type="number" name="age" size="6" minlength="2" maxlength="6" /> </p>
+      <p>Personality type: <input type="text" name="ptype" minlength="4" maxlength="6" size="6" /> (<a target="_blank"
+          href="http://www.humanmetrics.com/cgi-win/jtypes2.asp"> Don't you Know your type</a>)
+      </p>
+
+      <p>Favorite OS :
+        <select name="favoriteos">
+          <option value="Windows" selected>Windows</option>
+          <option value="Mac">Mac OS X</option>
+          <option value="Linux">Linux</option>
+        </select>
+      </p>
+      <p>Seeking age: <input type="number" name="minage" maxlength="2" size="6" /> to <input type="number" name="maxage"
+          maxlength="2" size="6" /></p>
+      <button type="submit"> Get Grade!</button>
+    </fieldset>
+
+  </form>
+</body>
+
+</html>
