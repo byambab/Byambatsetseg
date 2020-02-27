@@ -1,0 +1,13 @@
+form { 
+  margin: 0px;
+  padding: 20px;
+  width: 50%;
+ background-color:rgb(246, 249, 252) ; 
+}
+input [type="text"]
+{ 
+  font-size: 12px;
+  background-color: lightyellow;
+}
+.footer{position: fixed;left: 0;bottom: 0;width: 100%;background-color:rgba(132, 169, 238,0.5); text-align: right;}
+
