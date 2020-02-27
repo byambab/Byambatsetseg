@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Retrieve Grade</title>
+  <link href="grade.css" type="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+  <form action="http://mumstudents.org/params.php">
+    <h1>Retrieve your grade</h1>
+    <p>Name: <input type="text" name="sName" /> </p>
+    <p>Student ID: <input type="text" name="sId" pattern="[0-9]{6}" title="Six digits student code" /> </p>
+    <p>Course :
+      <select name="courses[]" size="15" multiple>
+        <optgroup label="400 Course">
+          <option value="CS401">Modern Programming Practice</option>
+          <option value="CS422">Database Management Systems</option>
+          <option value="CS425">Software Engineering</option>
+          <option value="CS435">Algorithms</option>
+          <option value="CS471">Parallel Programming</option>
+          <option value="CS472">Web Programming</option>
+          <option value="CS473">Mobile Device Programming</option>
+          <option value="CS488">Big Data Analytics</option>
+        </optgroup>
+        <optgroup label="500 Course">
+          <option value="CS522">Big Data</option>
+          <option value="CS523">Big Data Technology</option>
+          <option value="CS525">Advanced Software Development</option>
+          <option value="CS544">Enterprise Architecture</option>
+          <option value="CS545">Web Application Architecture</option>
+          <option value="CS572">Modern Web Applications</option>
+          <option value="CS582">Machine Learning</option>
+        </optgroup>
+      </select>
+    </p>
+    <fieldset>
+      <legend>Entry</legend>
+      <label> <input type="radio" name="entry" value="02" /> Feb</label>
+      <label> <input type="radio" name="entry" value="05" /> May</label>
+      <label> <input type="radio" name="entry" value="08" /> Aug</label>
+      <label> <input type="radio" name="entry" value="11" /> Nov</label>
+    </fieldset>
+    <p>please confrim that only looking up own grade : <input type="checkbox" name="confrim" pattern="on" title="Only own grade" /> </p>
+
+    <button type="submit"> Get Grade!</button>
+
+
+  </form>
+</body>
+
+</html>
