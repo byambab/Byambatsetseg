@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Introduction to Servlets Quiz </title>
+  <meta charset="utf-8" />
+ 
+</head>
+
+<body>
+  <div>
+    <h1>Introduction to Servlets Quiz </h1>
+    <a href="index.html">Home</a>
+    <dl>
+      <dt>1. What is the difference between a web server and a web container? </dt>
+      <dd>
+        Web Server or HTTP Server: A server which is capable of handling HTTP requests, sent by a client and respond
+        back with a HTTP response. Web server serves static contents.
+        Web container is used to manage the components like Servlets, JSP. It is a part of the web server. It serves
+        dynamic contents.
+        The Container gives your web app communications support, lifecycle management, multithreading support,
+        declarative security, and support for JSPs, so that you can concentrate on your own business logic.
+        The Container creates a request and response object that servlets (and other parts of the web app) can use to
+        get information about the request and send information to the client.
+      </dd>
+      <dt>2. What is a servlet? </dt>
+      <dd>
+        A servlet is server-side java code that can handle http requests and return dynamic content. Servlets are
+        managed by a servlet engine or container.
+      </dd>
+      <dt>3. How do web servers and web containers interact with servlets? </dt>
+      <dd>
+        When a request comes to the web server, if the server sees the request is for a servlet, it passes the request
+        data to the servlet container.
+        The servlet container locates the servlet, creates request and response objects and passes them to the servlet,
+        and returns to the web server the response stream that the servlet produces.
+        The web server sends the response back to the client browser to be rendered. </dd>
+      <dt>4. Who creates request objects? </dt>
+      <dd>
+        Container receives new request for a servlet and Creates HttpServletRequest and HttpServletResponse objects
+        • Calls service method on HttpServlet object in thread
+        • When thread completes, converts response object into HTTP response message </dd>
+      <dt>
+        5. What are the states in the servlet lifecycle? </dt>
+      <dd>
+        Servlet states: Load, Create, Init, Service, Destroy </dd>
+      <dt>6. Who calls init and when? </dt>
+      <dd>
+        Container calls init to initialize a servlet after instantiate servlet and it must complete before Container can
+        call service(). </dd>
+      <dt>
+        7. Which of init, service, and doGet should you override? </dt>
+      <dd>
+        Init() -> Gives you a chance to initialize your servlet before handling any client requests. We can override.
+        Service()-> This method looks at the request, determines the HTTP method (GET, POST, etc.) and invokes the
+        matching doGet(), doPost(), etc. on the servlet. We should NOT override the service() method.
+        doGet() or doPost() ->ALWAYS at least ONE of them! </dd>
+      <dt>
+        8. In what sense are servlets multi-threaded? </dt>
+      <dd>
+        The Container runs multiple threads to process multiple requests to a single servlet. And every client request
+        generates a new pair of request and response objects.
+        Each client gets a separate thread for each request, and the Container allocates new request and response
+        objects. </dd>
+      <dt> 9. What are the implications of this for servlet instance variables? </dt>
+      <dd>The container </dd>
+    </dl>
+
+
+  </div>
+
+  <div>
+    <p>
+      <a href="https://validator.w3.org/check/referer">
+        <img src=http://mumstudents.org/cs472/2013-09/images/w3c-html.png alt="Validate" />
+      </a>
+      <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img src=http://mumstudents.org/cs472/2013-09/images/w3c-css.png alt="Validate" />
+      </a>
+    </p>
+  </div>
+
+</body>
+
+</html>
