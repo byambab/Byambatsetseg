@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>JSP Custom Tags Quiz</title>
+  <meta charset="utf-8" />
+
+</head>
+
+<body>
+  <div>
+    <h1> JSP Custom Tags Quiz </h1>
+    <a href="index.html">Home</a>
+
+
+   
+    <ol>
+      <li>Rewrite the JSP page in the first demo (forEach) to use scripting instead of the JSTL
+        forEach.</li>
+    </ol>
+    <pre class="hljs"><code><div>&lt;%
+  List styles = (List)request.getAttribute(“styles”);
+    Iterator it = styles.iterator();
+    <span class="hljs-keyword">while</span>(it.hasNext()) {
+    out.print(“&lt;br&gt;<span class="hljs-keyword">try</span>: “ + it.next());
+  }
+%&gt;
+
+</div></code></pre>
+    <ol start="2">
+      <li>How do custom tags relate to JSTL?</li>
+    </ol>
+    <pre class="hljs"><code><div>JSTL: tandard custom tags for JSPs, helps to reduce scripting. They are custom tag api, but have become a standard library, essentially a part of JSP language.
+</div></code></pre>
+    <ol start="3">
+      <li>What is the role of the URI in the TLD and the taglib directive?</li>
+    </ol>
+    <pre class="hljs"><code><div>Link to TLD (descriptor) to validate JSP.
+</div></code></pre>
+    <ol start="4">
+      <li>What is a tag handler class?</li>
+    </ol>
+    <pre class="hljs"><code><div>Extends the tag support framework class – `javax.servlet.jsp.tagext.TagSupport` which overrides method public void doTag() throws JspException, IOException
+</div></code></pre>
+    <ol start="5">
+      <li>What is the role of attribute setters in a tag handler class?</li>
+    </ol>
+    <pre class="hljs"><code><div>Expose the attributes to be set to the custom tag.
+</div></code></pre>
+    <ol start="6">
+      <li>What is the role of the doTag() method in a tag handler class?</li>
+    </ol>
+    <pre class="hljs"><code><div>To output the content of the custom tag.
+</div></code></pre>
+    <ol start="7">
+      <li>What does the operation getJspContext().getOut().write(&quot;Hi Bob&quot;) do when called in
+        a doTag() method?</li>
+    </ol>
+    <pre class="hljs"><code><div>Out the text &quot;Hi Bob&quot;
+</div></code></pre>
+    <ol start="8">
+      <li>What does the operation getJspBody().invoke(null) do when called in a doTag() method?</li>
+    </ol>
+    <pre class="hljs"><code><div>Supporting tag bodies does not introduce any structural changes to the tag handler class. You still need to include setter methods for any attributes you are planning to declare and use. You still need to override the doTag method. To output the body content of the tag, inside the doTag method you need to acquire the JspFragment instance representing the body of the tag by calling the getJspBody method, then using its invoke method passing it null as its argument. Usually, this is done in a single step as follows:
+The container processes the JSP content found in the body of the tag just like any other JSP page content. If the invoke method is passed null as its argument, the resulting output of that JSP content is passed verbatim to the client. Therefore, the doTag method has no way of accessing the tag body output. All it can do is pass it along. We show how to access and modify the output of the tag body content before it's sent to the client in Section 8.1 (Manipulating Tag Body). It's important to stress, however, that it is the output resulting from the execution of the JSP code in the tag body, not the JSP code itself, that is passed to the client.
+</div></code></pre>
+
+    <div>
+      <p>
+        <a href="https://validator.w3.org/check/referer">
+          <img src=http://mumstudents.org/cs472/2013-09/images/w3c-html.png alt="Validate" />
+        </a>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+          <img src=http://mumstudents.org/cs472/2013-09/images/w3c-css.png alt="Validate" />
+        </a>
+      </p>
+    </div>
+
+</body>
+
+</html>
