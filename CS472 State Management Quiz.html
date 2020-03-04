@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>State Management Quiz</title>
+  <meta charset="utf-8" />
+
+</head>
+
+<body>
+  <div>
+    <h1>State Management Quiz</h1>
+    <a href="index.html">Home</a>
+    <dl>
+      <dt>1. Can post requests be bookmarked? What are the problems? </dt>
+      <dd>
+        Yes the post request can be bookmarked but there is no meaning of doing it because bookmark only consist of URL
+        and all the
+        form parameters will be lost and web server will not know what to do with since it will be expecting some
+        parameters. This happens because post request does not contains parameters in the URL. Only in get request form
+        parameter are shown in URL.
+      </dd>
+      <dt>2. What is the purpose of request dispatching? </dt>
+      <dd> passes the request to another resource on the server.</dd>
+      <dt>3. What is the difference between redirect and request dispatch? </dt>
+      <dd>• passes the request to another resource on the server, request and response objects passed to destination
+        servlet. Browser is completely unaware of servlet forward and hence the URL in browser address bar will remain
+        unchanged
+        • server sends HTTP status code 3xx to client along with the redirect URL (usually 302 temporary redirect),
+        client then sends a new request to the URL, address bar will change to new URL, only http message sent, request
+        and response objects cannot be sent
+      </dd>
+      <dt>4. What is an attribute?</dt>
+      <dd>Attributes are objects on the server. They promote communication between components. Only request attributes
+        are thread-safe. Following scopes: request scope, session scope, application scope
+        The servlet programmer can pass information from one servlet to another using attributes. It is just like
+        passing object from one class to another so that we can reuse the same object repeatedly.
+      </dd>
+      <dt>5. What is the difference between attributes and parameters? </dt>
+      <dd>The main difference is that Parameters come from the client request. The server side sets attributes.
+        Attribute return object and parameter return string. </dd>
+      <dt>6. What are dangers of using attributes? </dt>
+      <dd>Context scope attributes are shared by every servlet and every request in the application and have to be
+        careful, not thread safe.
+        Only request attributes are thread-safe</dd>
+      <dt>7. What does it mean to say that http is stateless? Give an example of a stateful protocol.</dt>
+      <dd>HTTP is stateless protocol, which means that after a web server responds to a request, there is no "memory" of
+        the request or who sent it. TCP is an example of a stateful protocol.
+      </dd>
+      <dt>8. Give 5 different methods for maintaining state information (count each attribute scope as one method).
+      </dt>
+
+      <dt>9. How long does a session last?</dt>
+      <dd>A session lasts until the browser is closed or until the user has logged out of the application.</dd>
+      <dt>10. What is a cookie, and how long does a cookie last? </dt>
+      <dd>A cookie is a small piece of data sent by the server and stored in the browser. Cookies last according to the
+        type. Temporary cookies last until the lifetime of the browser whereas permanent cookies last until its max set
+        age.</dd>
+      <dt>11. What is the purpose of URL rewriting? </dt>
+      <dd>URL rewriting is a way to support anonymous session tracking since using URL rewriting dynamically modifies
+        the
+        local URL to contain some extra information.</dd>
+      <dt>12. Why does the request attribute report ‘null’ for the maintaining state demo?</dt>
+      <dd>The request attribute reports 'null' for the maintaining state demo because local attribute requestState is
+        not
+        transferred to the post.</dd>
+
+    </dl>
+
+
+  </div>
+
+  <div>
+    <p>
+      <a href="https://validator.w3.org/check/referer">
+        <img src=http://mumstudents.org/cs472/2013-09/images/w3c-html.png alt="Validate" />
+      </a>
+      <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img src=http://mumstudents.org/cs472/2013-09/images/w3c-css.png alt="Validate" />
+      </a>
+    </p>
+  </div>
+
+</body>
+
+</html>
