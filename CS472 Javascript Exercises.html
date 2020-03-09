@@ -46,16 +46,33 @@
       <dd>
         <pre> function booyah1() {
         alert('BOOYAH!');
-      }
-      
-      function booyah2() {
-        booyah1();
-      }</pre>
+        }
+        
+        function booyah2() {
+          booyah1();
+        }
+    </pre>
       </dd>
       <dt>4. What is "Unobtrusive Javascript"? What is the practical application of Unobtrusive Javascript (and the
-        reasons
-        for using it)?</dt>
+        reasons for using it)?</dt>
       <dd>
+        General approach to the use of JavaScript in web pages. Though the term is not formally defined, its basic
+        principles are generally understood to include: Separation of functionality (the "behavior layer") from a Web
+        page's structure/content and presentation.
+
+        In HTML:
+        <pre>
+        &lt;a href=&quot;somewhere.html&quot; class=&quot;popup&quot; &gt; Go somewhere &lt;/a &gt;
+               In JavaScript:
+        var x = document.getElementsByClassName('okidoki'); 
+        for (var i=0;i &lt;x.length;i++=1) {
+          x[i].onclick = function () {
+            window.open(this.href,'okidoki','arguments');
+            return false;
+          }
+        }
+        </pre>
+
       </dd>
 
 
