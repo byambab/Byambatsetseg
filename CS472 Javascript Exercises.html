@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>State Management Quiz</title>
+  <meta charset="utf-8" />
+
+</head>
+
+<body>
+  <div>
+    <h1>Javascript Exercises</h1>
+    <a href="index.html">Home</a>
+    <dl>
+      <dt>1. What is the difference between the following 2 statements?
+        <pre>
+          setTimeout(booyah, 2000);
+          setTimeout(booyah(), 2000);
+        </pre>
+      </dt>
+      <dd>
+        <pre>
+          The function "booyah" is executed after 2 seconds
+          setTimeout(booyah, 2000);
+          The function "booyah" is executed right after setTimeout is executed.
+          setTimeout(booyah(), 2000);
+        </pre>
+      </dd>
+      <dt>2. What do the following 2 alerts display (answer without running the code)?
+        <pre>var myfunc = function(a, x) {
+          return a * x;
+         };
+         var x = myfunc(2, 3);
+         var y = myfunc;
+         alert(x);
+         alert(y(2,3)); </pre>
+      </dt>
+      <dd> Both 2 alerts display value 6 </dd>
+      <dt>3. Write functions booyah1 and booyah2 so that in both cases below, an alert box comes up after 2 seconds that
+        says “BOOYAH!”
+        <pre>
+          setTimeout(booyah1, 2000);
+          setTimeout(booyah2(), 2000);
+        </pre>
+      </dt>
+      <dd>
+        <pre> function booyah1() {
+        alert('BOOYAH!');
+      }
+      
+      function booyah2() {
+        booyah1();
+      }</pre>
+      </dd>
+      <dt>4. What is "Unobtrusive Javascript"? What is the practical application of Unobtrusive Javascript (and the
+        reasons
+        for using it)?</dt>
+      <dd>
+      </dd>
+
+
+    </dl>
+
+
+  </div>
+
+  <div>
+    <p>
+      <a href="https://validator.w3.org/check/referer">
+        <img src=http://mumstudents.org/cs472/2013-09/images/w3c-html.png alt="Validate" />
+      </a>
+      <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img src=http://mumstudents.org/cs472/2013-09/images/w3c-css.png alt="Validate" />
+      </a>
+    </p>
+  </div>
+
+</body>
+
+</html>
