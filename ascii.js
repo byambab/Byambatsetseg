@@ -1,77 +1,66 @@
+(function() {
+  let timeId;
+  let prvVal;
+  let stop;
+  const NORMALSPEED = 250;
+  const TURBOSPEED = 50;
+  let timeInterval = NORMALSPEED;
+  let text;
+  let idx;
 
-var timeout;
-var currentFrame;
-var animationType;
-var animations;
+  function changeContent() {
+      document.getElementById('mytextarea').value = text[idx];
+      idx = (idx + 1) % text.length;
+      if (!stop)
+          setTimeout(changeContent, timeInterval);
+  };
 
-function onClickStart() {
-  $('#btn-start').attr('disabled', true);
-  $('#btn-stop').attr('disabled', false);
- 
-  currentFrame = 0;
-  if (!animationType) {
-    animationType = $('#combo-animation option:selected').val();
+  function disableInputs(truth) {
+      document.getElementById('btnstart').disabled = truth;
+      document.getElementById('btnstop').disabled = !truth;
+      document.getElementById('comboanimation').disabled = truth;
+      document.getElementById('mytextarea').readOnly = truth;
+  };
+
+  function startClick() {
+      prvVal = document.getElementById('mytextarea').value;
+      text = prvVal.split("=====\n");
+      idx = 0;
+      stop = false;
+      setTimeout(changeContent, timeInterval);
+      disableInputs(true);
+  };
+
+  function stopClick() {
+      stop = true;
+      setTimeout(function() {
+          document.getElementById('mytextarea').value = prvVal;
+      }, timeInterval);
+      disableInputs(false);
+  };
+
+  function animationChange() {
+      let animType = document.getElementById('comboanimation').value;
+      document.getElementById('mytextarea').value = ANIMATIONS[animType];
   }
 
-  // Access ANIMATIONS
-  if (!animations) {
-    animations = ANIMATIONS[animationType].split('=====\n');
+  function speedChange() {
+      if (document.getElementById('cboxturbo').checked) {
+          timeInterval = TURBOSPEED;
+      } else
+          timeInterval = NORMALSPEED;
   }
 
-  const textArea = $('#mytextarea');
-  timeout = setTimeout(function() { doAnimation(textArea); }, calculateInterval());
-}
-
-function onClickStop() {
-  $('#btn-start').attr('disabled', false);
-  $('#btn-stop').attr('disabled', true);
-  if (timeout) {
-    clearTimeout(timeout);
-    timeout = null;
+  function sizeChange() {
+      document.getElementById('mytextarea').style.fontSize = document
+          .getElementById('combosize').value;
   }
-}
 
-function calculateInterval() {
-  const isTurbo = $('#cbox-turbo').is(':checked');
-  let interval = 250;
-  if (isTurbo) {
-    interval = 50;
-  }
-  return interval;
-}
-
-//////////////////////////////////////////
-
-function doAnimation(textArea) {
-  const len = animations.length;
-  if (len > 0) {
-    const displayContent = animations[currentFrame];
-    if (displayContent) {
-      textArea.val(displayContent);
-      currentFrame++;
-      if (currentFrame >= len) {
-        currentFrame = 0;
-      }
-    }
-  }
-  timeout = setTimeout(function() { doAnimation(textArea); }, calculateInterval());
-}
-
-function onChangeAnimation(element) {
-  animationType = element.value;
-  const value = ANIMATIONS[animationType];
-  if (value) {
-    const array = value.split('=====\n');
-    if (array && array.length > 0) {
-      currentFrame = 0;
-      animations = array;
-    }
-  }
-}
-
-function onChangeSize(element) {
-  $('#mytextarea').css('font-size', element.value);
-}
-
-
-
+  window.onload = function() {
+      document.getElementById('btnstart').onclick = startClick;
+      document.getElementById('btnstop').onclick = stopClick;
+      document.getElementById('comboanimation').onchange = animationChange;
+      document.getElementById('cboxturbo').onchange = speedChange;
+      document.getElementById('combosize').onchange = sizeChange;
+  };
+})();
