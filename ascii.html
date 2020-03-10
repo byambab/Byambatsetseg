@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>ASCIImation</title>
+  <meta charset="utf-8" />
+  <link href="ascii.css" type="text/css" rel="stylesheet">
+  <script src="ascii.js"></script>
+  <script src="animation.js"></script>
+</head>
+
+<body>
+
+  <div>
+    <h1>CS472: ASCII Animation Viewer</h1>
+ 
+    <textarea rows="20" cols="80" id="mytextarea"></textarea>
+    <div class="field_container">
+
+      <div>
+        <fieldset>
+          <legend>Play Controls:</legend>
+          <button id="btnStart" type="button" onclick="onClickStart()"> start</button>
+          <button id="btnStop"  type="button" onclick="onClickStop()" disabled >stop</button>
+        </fieldset>
+      </div>
+
+      <div>
+        <fieldset>
+          <legend>Animation:</legend>
+          <select id="combo-animation" onchange="onChangeAnimation(this)">
+            <option value="Blank" selected>Blank</option>
+            <option value="Custom">Custom</option>
+            <option value="Exercise">Exercise</option>
+            <option value="Juggler">Juggler</option>
+            <option value="Bike">Bike</option>
+            <option value="Dive">Dive</option>
+          </select>
+        </fieldset>
+      </div>
+      <div>
+        <fieldset>
+          <legend>Size:</legend>
+          <select id="combo-size" onchange="onChangeSize(this)">
+            <option value="7pt">Tiny</option>
+            <option value="10pt">Small</option>
+            <option value="12pt" selected>Medium</option>
+            <option value="16pt">Large</option>
+            <option value="24pt">Extra Large</option>
+            <option value="32pt">XXL</option>
+          </select>
+
+        </fieldset>
+      </div>
+      <div>
+        <fieldset>
+          <legend>Speed:</legend>
+          <input id="cbox-turbo" type="checkbox" value="Turbo"><span>Turbo</span>
+        </fieldset>
+      </div>
+    </div>
+
+  </div>
+
+  <div name="footer">
+    <p>
+      <a href="index.html">Home</a>
+      <a href="https://validator.w3.org/check/referer">
+        <img src=http://mumstudents.org/cs472/2013-09/images/w3c-html.png alt="Validate" />
+      </a>
+      <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img src=http://mumstudents.org/cs472/2013-09/images/w3c-css.png alt="Validate" />
+      </a>
+    </p>
+  </div>
+
+</body>
+
+</html>
