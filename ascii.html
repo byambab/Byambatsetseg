@@ -3,25 +3,26 @@
 
 <head>
   <title>ASCIImation</title>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" />  
   <link href="ascii.css" type="text/css" rel="stylesheet">
   <script src="ascii.js"></script>
   <script src="animation.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
 
-  <div>
+  <div >
     <h1>CS472: ASCII Animation Viewer</h1>
- 
+
     <textarea rows="20" cols="80" id="mytextarea"></textarea>
     <div class="field_container">
 
       <div>
         <fieldset>
           <legend>Play Controls:</legend>
-          <button id="btnStart" type="button" onclick="onClickStart()"> start</button>
-          <button id="btnStop"  type="button" onclick="onClickStop()" disabled >stop</button>
+          <button id="btn-start" type="button" onclick="onClickStart()"> start</button>
+          <button id="btn-stop" type="button" onclick="onClickStop()" disabled>stop</button>
         </fieldset>
       </div>
 
@@ -62,7 +63,7 @@
 
   </div>
 
-  <div name="footer">
+  <div >
     <p>
       <a href="index.html">Home</a>
       <a href="https://validator.w3.org/check/referer">
