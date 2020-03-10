@@ -5,9 +5,9 @@ var animationType;
 var animations;
 
 function onClickStart() {
-  $('#btnStart').attr('disabled', true);
-  $('#btnStop').attr('disabled', false);
-
+  $('#btn-start').attr('disabled', true);
+  $('#btn-stop').attr('disabled', false);
+ 
   currentFrame = 0;
   if (!animationType) {
     animationType = $('#combo-animation option:selected').val();
@@ -23,8 +23,8 @@ function onClickStart() {
 }
 
 function onClickStop() {
-  $('#btnStart').attr('disabled', false);
-  $('#btnStop').attr('disabled', true);
+  $('#btn-start').attr('disabled', false);
+  $('#btn-stop').attr('disabled', true);
   if (timeout) {
     clearTimeout(timeout);
     timeout = null;
@@ -69,7 +69,7 @@ function onChangeAnimation(element) {
   }
 }
 
-function onChangeFontSize(element) {
+function onChangeSize(element) {
   $('#mytextarea').css('font-size', element.value);
 }
 
