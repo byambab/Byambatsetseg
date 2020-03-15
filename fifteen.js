@@ -36,8 +36,19 @@ function init() {
     var divs = puzzleArea.getElementsByTagName("div");
 }
 
-function fnShuffle(){
-    
+function fnShuffle() {
+
+
+    function foo(...args) {
+        if (args && args.length) {
+            return args.reduce((accumulator, currentValue, currentIndex, array) =>
+                accumulator * currentValue);
+        }
+        return 0;
+    }
 }
+
+
+
 
 
