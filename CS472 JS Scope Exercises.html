@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Javascript Scope Exercises</title>
+  <meta charset="utf-8" />
+
+</head>
+
+<body>
+  <div>
+    <h1>Javascript Scope Exercises</h1>
+    <a href="index.html">Home</a>
+    <dl>
+      <dt>1. Determine what this Javascript code will print out (without running it):
+
+        <pre>
+          x = 1;
+          var a = 5;
+          var b = 10;
+          var c = function(a, b, c) {
+          var x = 10;
+          document.write(x);
+          document.write(a);
+          var f = function(a, b, c) {
+          b = a;
+          document.write(b);
+          b = c;
+          var x = 5;
+          }
+          f(a,b,c);
+          document.write(b);
+           }
+          c(8,9,10);
+          document.write(b);
+          document.write(x);
+          }
+        </pre>
+
+
+      </dt>
+      <dd>
+
+      </dd>
+      <dt>2. What is the difference between a method and function? </dt>
+      <dd> A method is a function that belongs to a class. In JavaScript, however, a method is a function that belongs
+        to an object. </dd>
+      <dt>3. What does 'this' refer to when used in a Java method? </dt>
+      <dd>Inside an object's method, the object refers to itself as this. </dd>
+      <dt>4. What does 'this' refer to when used in a JavaScript method?</dt>
+      <dd>In JavaScript this always refers to the "owner" of the function we're executing, or rather, to the object that
+        a function is a method of. When we define our faithful function doSomething() in a page, its owner is the page,
+        or rather, the window object (or global object) of JavaScript.</dd>
+      <dt>5. What does 'this' refer to when used in a JavaScript constructor function?</dt>
+      <dd>The value of this, when used in an object, is the object itself.
+
+        In a constructor function this does not have a value. It is a substitute for the new object. The value of this
+        will become the new object when a new object is created. </dd>
+      <dt>6. Assume object x is the prototype for object y in Javascript. Object x has a method f( ) containing keyword
+        'this'.
+        When f is called by x.f( ), what does 'this' refer to?</dt>
+      <dd>Refer to the prototype x</dd>
+      <dt>7. What is a free variable in JavaScript?</dt>
+      <dd>A variable referred to by a function that is not one of its parameters or local variables.
+      </dd>
+      <dt>8. Create an object that has properties with name = "fred" and major="music" and a property that is a function
+        that takes 2 numbers and returns the smallest of the two, or the square of the two if they are equal.</dt>
+      <dd>
+        <pre>
+          var Student = {
+            name: 'fred',
+            major: 'music',
+            fn: function (e1, e2) {
+                if (e1 === e2) {
+                    return e1**4;
+                } else {
+                    if (e1 &lt e2) {
+                        return e1;
+                    } else {
+                        return e2;
+                    }
+                }
+            }
+        }
+        </pre>
+
+      </dd>
+      <dt>9. Write Javascript code for creating three Employee objects using the "new" keyword and a constructor
+        function.
+        Employee objects have the following fields: name, salary, position.</dt>
+      <dd>
+        <pre>function Employee(name, salary, position) {
+        this.name = name;
+        this.salary = salary;
+        this.position = position;
+      }
+      
+      var emp1 = new Employee('Bat', 8000, 'Front');
+      var emp2 = new Employee('Zezeg', 9000, 'Back');
+      var emp3 = new Employee('Bud', 12000, 'Manager');
+    </pre>
+      </dd>
+      <dt>10. Write a Javascript function that takes any number of input arguments and returns the product of the
+        arguments.</dt>
+      <dd>
+        <pre> function fn(...args) {
+        if (args && args.length) {
+            return args.reduce((accumulator, currentValue, currentIndex, array) =>
+                accumulator * currentValue);
+        }
+        return 0;
+    }</pre>
+      </dd>
+      <dt> 11. Write an arrow function that returns the maximum of its three input arguments</dt>
+      <dd>
+        <pre>
+        var fn = (a, b, c) => {
+          return Math.max(a, b, c);
+        }
+      </pre>
+      </dd>
+    </dl>
+
+
+  </div>
+
+  <div>
+    <p>
+      <a href="https://validator.w3.org/check/referer">
+        <img src=http://mumstudents.org/cs472/2013-09/images/w3c-html.png alt="Validate" />
+      </a>
+      <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img src=http://mumstudents.org/cs472/2013-09/images/w3c-css.png alt="Validate" />
+      </a>
+    </p>
+  </div>
+
+</body>
+
+</html>
