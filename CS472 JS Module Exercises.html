@@ -18,29 +18,33 @@
             var a = 5;
             var b = 10;
             var c = function (a, b, c) {
-                document.write(x);
-                document.write(a);
-                var f = function (a, b, c) {
-                    b = a;
-                    document.write(b);
-                    b = c;
+                document.write(x); //undefined
+                document.write(a); // 8
+                var f = function (a, b, c) { 
+                    b = a; // set 8 
+                    document.write(b); //8
+                    b = c;  // set 10
                     var x = 5;
                 }
-                f(a, b, c);
-                document.write(b);
-                var x = 10;
+                f(a, b, c); // 8,9,10
+                document.write(b); // 10
+                var x = 10; //10
             }
             c(8, 9, 10);
-            document.write(b);
-            document.write(x);
+            document.write(b); //9  global b 
+            document.write(x); /1  global x 
             }          
         </pre>
       </dt>
       <dd>
-
+        result : Undefined,8,8,9,1
       </dd>
       <dt>2. Define Global Scope and Local Scope in Javascript. </dt>
-      <dd> </dd>
+      <dd> A variable declared outside a function, becomes GLOBAL.A global variable has global scope: All scripts and
+        functions on a web page can access it.
+        Variables declared within a JavaScript function, become LOCAL to the function. Local variables have Function
+        scope: They can only be accessed from within the function.
+      </dd>
       <dt>3. Consider the following structure of Javascript code:
         <pre>// Scope A
           function XFunc () {
@@ -55,7 +59,11 @@
         (d) Do statements in Scope C have access to variables defined in Scope A?
         (e) Do statements in Scope C have access to variables defined in Scope B?
       </dt>
-      <dd></dd>
+      <dd> (a) No
+        (b) yes
+        (c) No
+        (d) Yes
+        (e) yes </dd>
       <dt>4. What will be printed by the following (answer without running it)?
         <pre>var x = 9;
           function myFunction() {
@@ -65,7 +73,7 @@
           x = 5;
           document.write(myFunction());</pre>
       </dt>
-      <dd></dd>
+      <dd> Result: 81, 25 </dd>
       <dt>5.
         <pre>var foo = 1;
           function bar() {
@@ -78,7 +86,7 @@
           </pre>
         What will the alert print out? (Answer without running the code. Remember ‘hoisting’.)?
       </dt>
-      <dd> </dd>
+      <dd> result : 10 // foo is not declared inside function </dd>
       <dt>6. Consider the following definition of an add( ) function to increment a counter variable:
         <pre>
           var add = (function () {
@@ -91,11 +99,28 @@
         Modify the above module to define a count object with two methods: add( ) and reset( ). The count.add( ) method
         adds one to the counter (as above). The count.reset( ) method sets the counter to 0.
       </dt>
-      <dd></dd>
+      <dd>var CounterModule = (function () {
+        var counter = 0;
+
+        function add() {
+        return counter++;
+        }
+
+        function reset() {
+        counter = 0;
+        }
+
+        return {
+        add: function() {
+        return add();
+        }, reset: function() {
+        return reset();
+        }
+        }
+        }()); </dd>
       <dt>7. In the definition of add( ) shown in question 6, identify the "free" variable. In the context of a function
         closure, what is a "free" variable?</dt>
-      <dd>A variable referred to by a function that is not one of its parameters or local variables.
-      </dd>
+      <dd>Free variable is `counter` </dd>
       <dt>8. The add( ) function defined in question 6 always adds 1 to the counter each time it is called. Write a
         definition
         of a function make_adder(inc), whose return value is an add function with increment value inc (instead of 1).
@@ -137,17 +162,188 @@ Public Method: incrementAge( ) // uses private getAge( )
         </pre>
       </dt>
       <dd>
-
+        <pre>
+          var Employee = (function() {
+            var name;
+            var age;
+            var salary;
+        
+            var setAge = function(age) {
+                this.age = age;
+            };
+        
+            var setSalary = function(salary) {
+                this.salary = salary;
+            };
+        
+            var setName = function(name) {
+                this.name = name;
+            };
+        
+            var getAge = function() {
+                return this.age;
+            };
+        
+            var getSalary = function() {
+                return this.salary;
+            };
+        
+            var getName = function() {
+                return this.name;
+            };
+        
+            var increaseSalary = function(percentage) {
+                if (percentage) {
+                  this.salary = this.salary * (100 + percentage/100);
+                }
+                return this.salary;
+            };
+        
+            var incrementAge = function() {
+                this.age ++;
+            };
+        
+            return {
+                setAge: setAge,
+                setSalary: setSalary,
+                setName: setName,
+                increaseSalary: increaseSalary,
+                incrementAge: incrementAge,
+            };
+        }());
+        </pre>
       </dd>
       <dt> 11. Rewrite your answer to Question 10 using the Anonymous Object Literal Return Pattern. </dt>
-      <dd> </dd>
+      <dd>
+        <pre>
+        var Employee = (function() {
+          var name;
+          var age;
+          var salary;
+      
+          var setAge = function(age) {
+              this.age = age;
+          };
+      
+          var setSalary = function(salary) {
+              this.salary = salary;
+          };
+      
+          var setName = function(name) {
+              this.name = name;
+          };
+      
+          var getAge = function() {
+              return this.age;
+          };
+      
+          var getSalary = function() {
+              return this.salary;
+          };
+      
+          var getName = function() {
+              return this.name;
+          };
+      
+          var increaseSalary = function(percentage) {
+              if (percentage) {
+                this.salary = this.salary * (100 + percentage/100);
+              }
+              return this.salary;
+          };
+      
+          var incrementAge = function() {
+              this.age ++;
+          };
+      
+          return {
+              setAge: function (age) {
+                  return setAge(age);
+              },
+              setSalary: function (salary) {
+                  return setSalary(salary);
+              },
+              setName: function (name) {
+                  return setName(name);
+              },
+              increaseSalary: function (percentage) {
+                  return increaseSalary(percentage);
+              },
+              incrementAge: function () {
+                  return incrementAge();
+              },
+          };
+      }());
+
+      </pre>
+      </dd>
       <dt> 12. Rewrite your answer to Question 10 using the Locally Scoped Object Literal Pattern.
       </dt>
-      <dd> </dd>
+      <dd>
+        <pre>var EmployeeModule = (function() {
+        var Employee = {
+            name: '',
+            age: 0,
+            salary: 0,
+        };
+    
+        var getAge = function () {
+            return this.age;
+        };
+    
+        var getSalary = function () {
+            return this.salary;
+        };
+    
+        var getName = function () {
+            return this.name;
+        };
+    
+        Employee.setAge = function (age) {
+            this.age = age;
+            return this.age;
+        };
+    
+        Employee.setSalary = function (salary) {
+            this.salary = salary;
+            return this.salary;
+        };
+    
+        Employee.setName = function (name) {
+            this.name = name;
+            return this.same;
+        };
+    
+        Employee.increaseSalary = function (percentage) {
+            if (percentage) {
+                this.salary = this.salary * (100 + percentage/100);
+            }
+            return this.salary;
+        };
+    
+        Employee.incrementAge = function () {
+            if (this.age) {
+                this.age ++;
+            }
+            return this.age;
+        };
+    
+        return Employee;
+    }());</pre>
+      </dd>
       <dt> 13. Write a few Javascript instructions to extend the Module of Question 10 to have a public address field
         and
         public methods setAddress(newAddress) and getAddress( ). </dt>
-      <dd> </dd>
+      <dd>
+        <pre>Employee.setAddress = function(newAddress) {
+        this.address = newAddress;
+        };
+    
+        Employee.getAddress = function() {
+          return this.address;
+        }
+    }</pre>
+      </dd>
       <dt> 14. What is the output of the following code?
         <pre>
           const promise = new Promise((resolve, reject) => {
@@ -158,7 +354,7 @@ Public Method: incrementAge( ) // uses private getAge( )
         
         </pre>
       </dt>
-      <dd> </dd>
+      <dd> Result: Error: Hattori </dd>
 
       <dt> 15. What is the output of the following code?
         <pre>
@@ -171,10 +367,10 @@ Public Method: incrementAge( ) // uses private getAge( )
         
         </pre>
       </dt>
-      <dd> </dd>
+      <dd> Result: Success: Hattori </dd>
 
 
-      <dt> 15. What is the output of the following code?
+      <dt> 16. What is the output of the following code?
         <pre>
           function job(state) {
             return new Promise(function(resolve, reject) {
@@ -195,7 +391,8 @@ Public Method: incrementAge( ) // uses private getAge( )
            });
         </pre>
       </dt>
-      <dd> </dd>
+      <dd> Result : success
+        error</dd>
 
     </dl>
 
