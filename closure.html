@@ -3,25 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
+    <script src="closure.js"></script>
+    <title>Module and Closure</title>
 </head>
 
 <body>
 
+    <a href="index.html">Home</a>
+    <br>
+    <h1>Account</h1>
+
     <div>
         <label for="name">Account Name:</label>
-        <input type="text" id="name" name="name" value="" required="required" maxlength="16"><br>
+        <input type="text" id="aname" name="aname" value="" required="required" maxlength="16"><br>
     </div>
     <div>
         <label for="deposit">Deposit:</label>
         <input type="text" id="deposit" name="deposit" value="" required="required" maxlength="16"><br>
     </div>
     <div>
-        <button id="create" onclick="createAccount()">Create new account</button>
+        <button id="createAcc" onclick="createAccount()">Create new account</button>
     </div>
     <div>
         <textarea id="txtarea" cols="80" rows="20"></textarea>
     </div>
 </body>
+
+<div>
+    <p>
+        <a href="https://validator.w3.org/check/referer">
+            <img src=http://mumstudents.org/cs472/2013-09/images/w3c-html.png alt="Validate" />
+        </a>
+        <a href="http://jigsaw.w3.org/css-validator/check/referer">
+            <img src=http://mumstudents.org/cs472/2013-09/images/w3c-css.png alt="Validate" />
+        </a>
+    </p>
+</div>
 
 </html>
