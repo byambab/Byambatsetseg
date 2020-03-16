@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JQuery II</title>
+    <meta charset="utf-8" />
+
+</head>
+
+<body>
+    <div>
+        <h1>JQuery II</h1>
+        <a href="index.html">Home</a>
+        <dl>
+            <dt>1. Which, if any, of the following 3 code fragments are equivalent? Explain why they are different, if
+                they are. Explain why they can have different parameters and be equivalent, if they are equivalent.
+                <pre>//code fragment 1
+                    $("li").each(function(idx, e) {
+                     $(e).css(“color”, “yellow”); });
+                    //code fragment 2
+                    $("li").each(function() {
+                     $(this).css(“color”, “yellow”); });
+                    //code fragment 3
+                    $("li").each(function(idx) {
+                     $(this).css(“color”, “yellow”); });</pre>
+            </dt>
+            <dd>
+                <pre>
+                $("li").each(function(idx, e) {
+                    $(e).css("color", "yellow"); });
+                // In above code, idx is the index of the `li` element and `e` is the matched element, all `li` elements color is set to yellow.
+                
+                //code fragment 2
+                $("li").each(function() {
+                    $(this).css("color", "yellow"); });
+                // $(this) is the element which matched with jQuery search condition.
+                
+                //code fragment 3
+                $("li").each(function(idx) {
+                    $(this).css("color", "yellow"); });
+                // $(this) is the element which matched with jQuery search condition and idx has not been used.
+               </pre>
+            </dd>
+
+            <dt> 2. Write a jQuery expression to find all divs on a page that include an unordered list in them, and
+                make
+                their text color be blue.
+                <pre>
+                    &lt;div>no ul here &lt;/div>
+                    &lt;div>
+                        This does contain a ul.
+                        &lt;ul>
+                            &lt;li>the first item&lt;/li>
+                            &lt;li>the second item&lt;/li>
+                        &lt;/ul>
+                    &lt;/div>
+                    &lt;script>
+                        &lt;!—INSERT YOUR JQUERY CODE HERE - - >
+                    &lt;/script>
+                    &lt;/body>
+                </pre>
+            </dt>
+            <dd>
+                <pre> $("div").has( "ul" ).css("color", "blue");</pre>
+            </dd>
+
+            <dt> 3. Write jQuery code to append the following div element (and all of its contents) dynamically to the
+                body
+                element.
+                <pre>
+                    &lt;div>&lt;h1>JQuery Core&lt;/h1>&lt;/div>
+                    HTML:
+                    &lt;!DOCTYPE html>
+                    &lt;html>
+                        &lt;head>
+                            &lt;meta charset="utf-8">
+                            &lt;title>JS Bin&lt;/title>
+                        &lt;/head>
+                        &lt;body>
+        
+                        &lt;/body>
+                    &lt;/html> 
+                </pre>
+            </dt>
+            <dd>
+                <pre>
+
+                $(function() {
+                var div= "&lt;div>&lt;h1>JQuery Core&lt;/h1>&lt;/div>";
+                    $("body").append(div);
+                });
+            </pre>
+            </dd>
+
+        </dl>
+
+
+    </div>
+
+    <div>
+        <p>
+            <a href="https://validator.w3.org/check/referer">
+                <img src=http://mumstudents.org/cs472/2013-09/images/w3c-html.png alt="Validate" />
+            </a>
+            <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                <img src=http://mumstudents.org/cs472/2013-09/images/w3c-css.png alt="Validate" />
+            </a>
+        </p>
+    </div>
+
+</body>
+
+</html>
