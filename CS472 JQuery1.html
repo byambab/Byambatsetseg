@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JQuery I</title>
+    <meta charset="utf-8" />
+
+</head>
+
+<body>
+    <div>
+        <h1>JQuery I</h1>
+        <a href="index.html">Home</a>
+        <dl>
+            <dt>1. In jQuery terminology, what is the difference between the “jQuery function” and the “jQuery object”?
+            </dt>
+            <dd> The jQuery function is a factory for creating a jQuery object that represents one or more DOM nodes.
+                jQuery objects have methods to manipulate these nodes. These methods (sometimes called commands), are
+                chainable as each method also returns a jQuery object.</dd>
+
+            <dt> 2. Write jQuery code to find all h1 elements that are children of a div element and make their
+                background
+                color red.
+                Sample HTML:
+                <pre>
+                    &lt;body&gt;
+                    &lt;h1&gt;abc&lt;/h1&gt;&lt;br&gt;&lt;div&gt;
+                    &lt;h1&gt;div-1&lt;/h1&gt; &lt;h1&gt;div-2&lt;/h1&gt; &lt;/div&gt; &lt;h1&gt;xyz&lt;/h1&gt;
+                &lt;/body&gt;
+                </pre>
+            </dt>
+            <dd>
+                <pre>$('div h1').css({'background': 'red'});</pre>
+            </dd>
+
+            <dt>3. Use a jQuery method to insert the text "YES!" at the end of the element.
+                <pre>
+                    &lt;!DOCTYPE html&gt;
+                    &lt;html&gt;
+                        &lt;head&gt;
+                        &lt;script&gt;
+                            // &lt;!—INSERT YOUR JQUERY CODE HERE - - &gt;
+                           
+                        &lt;/script&gt;
+                        &lt;/head&gt;
+                        &lt;body&gt;
+                            &lt;p&gt;Is jQuery FUN or what? &lt;/p&gt;
+                        &lt;/body&gt;
+                    &lt;/html&gt;
+                </pre>
+            </dt>
+            <dd>
+                <pre>$('p').after('&lt;span&gt;YES!&lt;/span&gt;');</pre>
+            </dd>
+
+        </dl>
+
+
+    </div>
+
+    <div>
+        <p>
+            <a href="https://validator.w3.org/check/referer">
+                <img src=http://mumstudents.org/cs472/2013-09/images/w3c-html.png alt="Validate" />
+            </a>
+            <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                <img src=http://mumstudents.org/cs472/2013-09/images/w3c-css.png alt="Validate" />
+            </a>
+        </p>
+    </div>
+
+</body>
+
+</html>
